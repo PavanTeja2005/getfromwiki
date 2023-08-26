@@ -14,7 +14,7 @@ cd getfromwiki
 chmod +x install.sh
 ./install.sh
 ```
-If you are using python3 or have no python preinstalled but went through the above steps,
+If you are using python3 or have no python preinstalled and completed the above steps,
 ```bash
 pip3 install -r requirements.txt
 python3 wiki.py
