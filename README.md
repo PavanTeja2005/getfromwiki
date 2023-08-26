@@ -7,7 +7,6 @@ if you have them,
 git clone https://github.com/PavanTeja2005/getfromwiki.git
 cd getfromwiki
 pip install -r requirements.txt
-python wiki.py
 ```
 else go with this,
 ```bash
@@ -15,6 +14,12 @@ git clone https://github.com/PavanTeja2005/getfromwiki.git
 cd getfromwiki
 chmod +x install.sh
 ./install.sh
+```
+If you are using python3 or have no python preinstalled but went through the above steps,
+```bash
+python3 wiki.py
+```
+or else,
+```bash
 python wiki.py
 ```
-
