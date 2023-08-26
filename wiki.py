@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import os
 def install(package):
     try:
         subprocess.check_call([sys.executable, "-m", "pip", "install", package])
@@ -9,6 +10,13 @@ try:
     import wikipedia
 except ModuleNotFoundError:
     install("wikipedia")
+    try:
+        os.system("clear")
+    except:
+        try:
+            os.system("cls")
+        except:
+            pass
     try:
         import wikipedia
     except:
@@ -21,6 +29,13 @@ try:
     un=1
 except ModuleNotFoundError:
     install("unidecode")
+    try:
+        os.system("clear")
+    except:
+        try:
+            os.system("cls")
+        except:
+            pass
     try:
         import unindecode
         un=1
