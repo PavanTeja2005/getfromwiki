@@ -19,12 +19,14 @@ option=int(input("Select on option:"))
 while( not (option <= len(li) and option > 0) ):
     option=int(input("Please enter a valid option:"))
 try:
-    result = wikipedia.summary(wikipedia.suggest(li[option-1]))
+    result = wikipedia.summary(li[option-1])
 except wikipedia.exceptions.DisambiguationError as e:
     print("Code under confusion.")
     for l,k in enumerate(e.options):
         print(l,k)
     op=int(input("Enter selection an option:"))
-    result = wikipedia.summary(wikipedia.suggest(e.options[op]))
+    result = wikipedia.summary(e.options[op])
+# printing the result
+print(unidecode(result))
 # printing the result
 print(unidecode(result))
