@@ -25,4 +25,4 @@ pip install -r requirements.txt
 python wiki.py
 ```
 
-## Cloning this repository is optional.Using the wiki.py file alone can do the work,there is no need of any manual python package installation too.
+#### Cloning this repository is optional.Using the wiki.py file alone can do the work,there is no need of any manual python package installation too.
