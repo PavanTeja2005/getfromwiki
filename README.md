@@ -1,2 +1,2 @@
 # getfromwiki
-It is a code which you can use to get data from wikipedia to use to get knowledge or in any other projects where you need wiki information.
+It is a code which you can use to search and get data from wikipedia on the go in variety of languages.
