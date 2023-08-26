@@ -1,6 +1,5 @@
 import subprocess
 import sys
-import os
 def install(package):
     try:
         subprocess.check_call([sys.executable, "-m", "pip", "install", package])
