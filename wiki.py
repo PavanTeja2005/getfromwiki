@@ -1,6 +1,33 @@
-import wikipedia
+import subprocess
+import sys
+import os
+def install(package):
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    except:
+        subprocess.check_call([sys.executable, "-m", "pip3", "install", package])
+try:
+    import wikipedia
+except ModuleNotFoundError:
+    install("wikipedia")
+    try:
+        import wikipedia
+    except:
+        print("Req. module not installed aborting....")
+        quit(0)
 import warnings
-from unidecode import unidecode
+un=0
+try:
+    import unidecode
+    un=1
+except ModuleNotFoundError:
+    install("unidecode")
+    try:
+        import unindecode
+        un=1
+    except:
+        pass
+
 warnings.filterwarnings('ignore')
 title="""
   ____      _   _____                 __        ___ _    _ 
@@ -19,14 +46,15 @@ option=int(input("Select on option:"))
 while( not (option <= len(li) and option > 0) ):
     option=int(input("Please enter a valid option:"))
 try:
-    result = wikipedia.summary(li[option-1])
+    result = wikipedia.summary(wikipedia.suggest(li[option-1]))
 except wikipedia.exceptions.DisambiguationError as e:
     print("Code under confusion.")
     for l,k in enumerate(e.options):
         print(l,k)
     op=int(input("Enter selection an option:"))
-    result = wikipedia.summary(e.options[op])
+    result = wikipedia.summary(wikipedia.suggest(e.options[op]))
 # printing the result
-print(unidecode(result))
-# printing the result
-print(unidecode(result))
+if(un):
+    print(unidecode.unidecode(result))
+else:
+    print(str(result.encode("utf-8"))[2:-1])
