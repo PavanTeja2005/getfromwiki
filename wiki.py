@@ -72,13 +72,16 @@ if(un):
 else:
     print(str(result.encode("utf-8"))[2:-1])
 file=input("Enter file name to save summary or type quit to quit:")
-if(file!="quit" and bool(file)==True):
-    open(file,"a").write(unidecode.unidecode(result))
+n=0
+while n==0:
+  n=1
+  if(file!="quit" and bool(file)==True):
+    open(file,"a").write(str(result.encode("utf-8"))[2:-1])
     print("File saved!")
-elif(file==""):
-    print("File name shouldn't be empty! Aborting...")
-elif(file=="quit"):
+  elif(file==""):
+    print("File name shouldn't be empty!.")
+    file=input("Reenter file name or type quit to quit:")
+    n=1
+  elif(file=="quit"):
     quit()
-else:
-    os.execv(sys.argv[0], sys.argv)
-    pass
+    
